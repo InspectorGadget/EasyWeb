@@ -37,19 +37,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     </head>
     
     <body>
-        <?php
-            function onRand() {
-                
-                $rand = mt_rand(1000, 50000);
-                echo $rand;
-                
-            }
-            
-        ?>
         
         <h2> Please sign up for your FREE API Key! </h2>
         
-        <form action="thanks\index.php" method="POST">
+        <form action="thanks\Thanks.php" method="POST">
             Name: <input name="name" type="name" </input> <br>
             Email: <input name="email" type="name" </input> <br>
             <input type="submit" </input>
