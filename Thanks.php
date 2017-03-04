@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <title> Thanks || PHP </title>
         <style>
             
-            body {
+            body, footer {
                 background-color: white;
                 text-align: center;
                 box-shadow: 0 0 45px black;
@@ -30,30 +30,111 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 max-width: 700px;
             }
             
+            p.italic {
+                font-style: italic;
+            }
+            
         </style>
     </head>
     <body>
         
-        <?php
+        <script>
+        
+        window.alert("Connected to MySQL DataBase!");
+        
+        </script>
+        
+        <h3>
             
+            <?php
+            
+                $name = $_POST['name'];
                 
-            $get = $_POST['name'];
-                
-               if(empty($_POST['name'])) {
-                    echo "Name is required!";
+                if(!empty($name)) {
+                    echo "Hi $name!";
+                    echo "<br>";
+                }
+
+            ?>
+            
+        </h3>
+        
+        <h1>
+            
+            <?php
+                    $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    
+                if(empty($_POST['name'])) {
+                    echo "Generation Failed!";
                 }
                 else {
-                        $file = fopen("names.txt", "w") or die("Unable to create file! File exists....");
-                        $gg = fgets($file, $get);
-                        if($gg != false) {
-                            echo "You cant use $get";
-                        } else {
-                            echo "Accepted!";
-                        }
-                        
-                } 
+                    echo "API has been generated!";
+                }
+                
+            ?>
+            
+        </h1>
+        
+        <?php
+             
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+                
+                if(!empty($_POST['name'])) {
+                    $rand = mt_rand(1, 999999);
+                    echo "Your API Key: $rand";
+                }
                 
         ?>
         
+        
+        <strong>
+            <p class="italic">
+            <?php
+            
+                if(!empty($_POST['name'])) {
+                    echo "Please keep this API Key somewhere save, You can screenshot too!";
+                    echo "<br>";
+                    echo "<br>";
+                    echo "<br>";
+                    echo "<br>";
+                    echo "<br>";
+                    echo "API requested in:";
+                    echo "<br>";
+                    echo $_SERVER['REQUEST_TIME'] . " seconds!";
+                }
+            
+            ?>
+            </p>
+        </strong>
     </body>
+    
+    <footer>
+        
+        <strong>
+            
+            <p>
+                
+                <?php
+                
+                echo "<br>";
+                echo "<br>";
+                echo "Your Web Client";
+                echo "<br>";
+                echo "<br>";
+                echo $_SERVER['HTTP_USER_AGENT'];
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
+                
+                ?>
+                
+                &copy All rights reserved RTGDaCoder!
+                
+            </p>
+            
+        </strong>
+        
+    </footer>
 </html>

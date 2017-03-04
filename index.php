@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         
         <style>
             
-            body {
+            body, footer {
                 background-color: white;
                 padding: 40px;
                 margin: 30px auto;
@@ -47,17 +47,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             
         ?>
         
-        <script>
-            
-            function onPrompt() {
-                
-                return window.alert(<?php onRand(); ?>);
-                
-            }
-        
-        </script>
-        
-        <button type="button" onclick="onPrompt()"> Click me </button> <br>
+        <h2> Please sign up for your FREE API Key! </h2>
         
         <form action="thanks\index.php" method="POST">
             Name: <input name="name" type="name" </input> <br>
@@ -66,5 +56,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         </form>
         
     </body>
+    
+    <footer>
+        
+        <strong>
+            
+            <p>
+                &copy; <?php echo date('Y'); ?>
+            </p>
+            
+        </strong>
+        
+    </footer>
     
 </html>
